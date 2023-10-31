@@ -79,7 +79,7 @@ class TabNumberedStepperMenu(
             }
 
             when {
-                index == currentStep -> {
+                index <= currentStep -> {
                     iconView.findViewById<AppCompatImageView>(R.id.icon_outer).setImageDrawable(ColorDrawable(widgetColor))
                     iconView.findViewById<AppCompatImageView>(R.id.icon_inner).isVisible = false
                     iconView.findViewById<TextView>(R.id.text_inner).run {
@@ -89,13 +89,13 @@ class TabNumberedStepperMenu(
                     labelView.alpha = 1F
                     connectorView?.alpha = 1F
                 }
-                index < currentStep -> {
+                /*index < currentStep -> {
                     iconView.findViewById<AppCompatImageView>(R.id.icon_outer).setImageDrawable(ColorDrawable(widgetColor))
                     iconView.findViewById<AppCompatImageView>(R.id.icon_inner).isVisible = true
                     iconView.findViewById<TextView>(R.id.text_inner).isVisible = false
                     labelView.alpha = 1F
                     connectorView?.alpha = 1F
-                }
+                }*/
                 index > currentStep -> {
                     iconView.findViewById<AppCompatImageView>(R.id.icon_outer).setImageDrawable(ColorDrawable(Color.WHITE))
                     iconView.findViewById<AppCompatImageView>(R.id.icon_inner).isVisible = false
